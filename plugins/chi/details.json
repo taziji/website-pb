@@ -1,0 +1,44 @@
+{
+    "uid": "chi",
+    "name": "Chi Plugin",
+	"description": "This is for chi's website",
+    "version": "0.2.0",
+    "pb_version": "0.5.x",
+	"icon": "/img/chi.ico",
+	"author": {
+		"name": "Chi Zhang",
+		"email": "ch_zhang21th@hotmail.com",
+		"website": "http://www.shangzhe-digital.com",
+		"contributors": [
+			{
+				"name": "Chi Zhang",
+				"email": "ch_zhang21th@hotmail.com"
+			}
+		]
+	},
+    "settings": [
+	],
+	"permissions": {
+		"ACCESS_USER": [],
+		"ACCESS_WRITER": [],
+		"ACCESS_EDITOR": [], 
+		"ACCESS_MANAGING_EDITOR": []
+	},
+	"main_module": {
+		"path": "chi.js"
+	},
+	"theme": {
+		"settings": [
+		],
+		"content_templates":[
+			{
+			    "file": "homepage",
+			    "name": "Homepage"
+			},
+			{
+			    "file": "page",
+			    "name": "Page"
+			}
+		]
+	}
+}

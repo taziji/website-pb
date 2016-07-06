@@ -1,0 +1,104 @@
+^tmp_head^
+
+	<div class="header" ng-app="pencilblueApp" ng-controller='PencilBlueController'>
+	<!---->
+		<div class="header-left">
+			<div class="logo">
+				<a href="index.html"><img src="/public/chi/img/logo.png" alt=""></a>
+			</div>
+			<div class="top-nav">
+				<ul ng-repeat="n in navigation">
+					<li ng-class="navClass('{{n.description}}')"><a href={{n.url}} > {{n.description}}</a></li>	
+				</ul>
+			</div>
+			<ul class="social-in">
+				<li><a href="#"><i> </i></a></li>
+				<li><a href="#"><i class="gmail"> </i></a></li>
+				<li><a href="#"><i class="twitter"> </i></a></li>
+				<li><a href="#"><i class="pin"> </i></a></li>
+				<li><a href="#"><i class="dribble"> </i></a></li>
+				<li><a href="#"><i class="behance"> </i></a></li>
+				
+			</ul>
+			<p class="footer-class">© 2016 Chi Digital</a> </p>
+		</div>
+		<!---->
+		<!---->
+		<div class="header-top">
+			<div class="logo-in">
+				<a href="index.html"><img src="/public/chi/img/logo.png" alt=""></a>
+			</div>
+			<div class="top-nav-in">
+			<span class="menu"><img src="/public/chi/img/menu.png" alt=""> </span>
+				<ul ng-repeat="n in navigation">
+					<li><a href={{n.url}} class="black" > {{n.description}}</a></li>	
+				</ul>
+				<script>
+					$("span.menu").click(function(){
+						$(".top-nav-in ul").slideToggle(500, function(){
+						});
+					});
+			</script>
+
+			</div>
+			<div class="clear"> </div>
+		</div>
+		<!---->
+		<div class="content">
+			<div class="work">
+				<div class="work-top">
+					<script>
+						$(function () {
+						  $("#slider").responsiveSlides({
+							auto: true,
+							speed: 500,
+							namespace: "callbacks",
+								pager: true,
+						  });
+						});
+					</script>
+					<div class="slider">
+						<div class="callbacks_container">
+						  <ul class="rslides" id="slider">
+						  	<li ng-repeat="i in images" ng-show="images"><img ng-src={{i.location}} ></li>	
+						  </ul>
+					  </div>
+					</div>
+					<h2>
+					^headline^
+					</h2>
+					<p>
+					^layout^
+					</p>
+					<div class="tags">
+					<h3>Tags</h3>
+						<ul class="tag">
+							<li><a href="#">web design</a></li>
+							<li><a href="#">photography</a></li>
+							<li><a href="#">development</a></li>
+							<li><a href="#">php</a></li>
+							<li><a href="#">ecommerce</a></li>
+							<li><a href="#">graphic</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="clear"> </div>
+			</div>
+		</div>
+
+		<div class="clear"> </div>
+	</div>
+	<script type="text/javascript">
+	var pencilblueApp = angular.module("pencilblueApp", ["ngRoute"]).controller("PencilBlueController", ['$scope', '$location', 
+		function ($scope, $location)
+		{
+				^angular_objects^
+				$scope.navClass = function (page) {
+				    var currentRoute = $location.path().substring(1) || 'HOME';
+				    return page === currentRoute ? 'active' : 'black';
+				}; 
+
+	}]);
+	pencilblueApp.config(["$compileProvider",function(e){e.aHrefSanitizationWhitelist(/^s*(https?|ftp|mailto|javascript):/)}]);
+
+	</script>
